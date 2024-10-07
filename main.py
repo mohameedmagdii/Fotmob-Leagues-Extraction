@@ -77,6 +77,7 @@ class FotmobAPI:
             rows_array = np.array(rows_list)
             matchesDf = pd.concat([matchesDf, pd.DataFrame(rows_array, columns=matchesDf.columns)], ignore_index=True)
             matchesDf['match_datetime'] = matchesDf['match_datetime'].apply(FotmobAPI.add_hours_and_format)
+            matchesDf['match_name'] = matchesDf['home_team'] + ' vs ' + matchesDf['away_team']
             return matchesDf
         except requests.exceptions.RequestException as e:
             st.error(f"Error: {e}")
