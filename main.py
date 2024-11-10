@@ -40,7 +40,8 @@ class FotmobAPI:
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edge/91.0.864.71 Safari/537.36",
         ]
         user_agent = random.choice(uastrings)
-        headers = {'User-Agent': user_agent}
+        headers = {'User-Agent': user_agent,
+                  "x-fm-req": "eyJib2R5Ijp7InVybCI6Ii9hcGkvbWF0Y2hEZXRhaWxzP21hdGNoSWQ9NDUwNjQ3MyIsImNvZGUiOjE3MzEyMzQ0MTU1NzIsImZvbyI6IjgxNTc1NWYwMiJ9LCJzaWduYXR1cmUiOiI3NTE5QUVFNTdEMTI3RkFENDQ3QjYxRjk5MjQ1RDA4NiJ9"}
         response = requests.get(link, headers=headers)
         response.raise_for_status()
         response_json = response.json()
