@@ -41,7 +41,7 @@ class FotmobAPI:
         ]
         user_agent = random.choice(uastrings)
         headers = {'User-Agent': user_agent,
-                  "x-fm-req": requests.get('http://46.101.91.154:6006/').json()['x-fm-req']}
+                  "x-mas": requests.get('http://46.101.91.154:6006/').json()['x-mas']}
         response = requests.get(link, headers=headers)
         response.raise_for_status()
         response_json = response.json()
