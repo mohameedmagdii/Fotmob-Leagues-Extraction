@@ -23,7 +23,7 @@ class FotmobAPI:
             dt = datetime.strptime(utc_time, "%Y-%m-%dT%H:%M:%SZ")
 
         # Add 3 hours to the time
-        new_time = dt + timedelta(hours=3)
+        new_time = dt + timedelta(hours=2)
 
         # Return the time in the desired format 'YYYY-MM-DD HH:MM:SS'
         return new_time.strftime('%Y-%m-%d %H:%M:%S')
