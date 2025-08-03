@@ -41,7 +41,7 @@ class FotmobAPI:
         ]
         user_agent = random.choice(uastrings)
         headers = {'User-Agent': user_agent,
-                  "x-mas": requests.get('http://46.101.91.154:6006/').json()['x-mas']}
+                  "x-mas": x_mas}
         response = requests.get(link, headers=headers)
         response.raise_for_status()
         response_json = response.json()
@@ -89,7 +89,7 @@ class FotmobAPI:
 st.title('League Matches Downloader')
 
 url = st.text_input('Enter the league URL', '')
-
+x_mas = st.text_input('Enter the X-Mas Header', '')
 # Add a submit button
 if st.button('Submit'):
     if url:
@@ -117,3 +117,4 @@ if st.button('Submit'):
             st.error(str(e))
     else:
         st.error("Please enter a URL.")
+
