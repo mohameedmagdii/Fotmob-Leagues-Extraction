@@ -40,8 +40,7 @@ class FotmobAPI:
             "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edge/91.0.864.71 Safari/537.36",
         ]
         user_agent = random.choice(uastrings)
-        headers = {'User-Agent': user_agent,
-                  "x-mas": x_mas}
+        headers = {'User-Agent': user_agent}
         response = requests.get(link, headers=headers)
         response.raise_for_status()
         response_json = response.json()
@@ -117,4 +116,5 @@ if st.button('Submit'):
             st.error(str(e))
     else:
         st.error("Please enter a URL.")
+
 
